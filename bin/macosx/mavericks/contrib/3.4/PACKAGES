@@ -12,3 +12,11 @@ Imports: colorspace, grid, ggplot2 (>= 2.2.1), scales
 Suggests: testthat, lintr, knitr
 License: GPL-3
 MD5sum: 846d2c81935110d47ec6d636de616a51
+
+Package: multimput
+Version: 0.2.7
+Depends: R (>= 3.0.0)
+Imports: dplyr, methods, tibble, tidyr, assertthat, lme4, mvtnorm, digest
+Suggests: testthat, INLA, snowfall, ggplot2, mgcv, knitr, MASS, rmarkdown
+License: GPL-3 | file LICENSE
+MD5sum: 55b9122f28ffa40203f89616be3c78cd
