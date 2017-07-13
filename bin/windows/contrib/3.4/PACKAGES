@@ -1,0 +1,6 @@
+Package: INBOtheme
+Version: 0.5.5
+Depends: R (>= 3.2.0)
+Imports: colorspace, grid, ggplot2 (>= 2.2.1), scales
+Suggests: testthat, lintr, knitr
+License: GPL-3
