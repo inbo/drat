@@ -1,0 +1,86 @@
+---
+output: html_document
+---
+
+## INBO drat repository
+
+A [drat](http://dirk.eddelbuettel.com/code/drat.html) repository is a way to make [R packages](https://www.r-project.org) more easily available to end users.
+
+How to use it:
+
+1. Make sure that you have the `drat` package installed
+1. Add this repo to your current session `drat::addRepo("inbo")`
+1. Use `install.packages()` or `update.packages()` to install or update the packages
+
+```{r setup, include = FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(purrr)
+library(tidyr)
+```
+
+```{r read-data}
+package <- list.files(
+  pattern = "PACKAGES$",
+  recursive = TRUE,
+  full.names = TRUE
+)
+os <- ifelse(
+  grepl("src", package),
+  1,
+  ifelse(
+    grepl("windows", package), 2, 3)
+) %>%
+  factor(labels = c("Source", "Windows", "OS X"))
+dataset <- map(package, read.dcf, fields = c("Package", "Version")) %>%
+  map(as_data_frame) %>%
+  map2_df(os, ~mutate(.x, OS = .y)) %>%
+  extract(
+    Version, 
+    into = c("Major", "Minor", "Detail"), 
+    regex = "([[:digit:]]+)\\.([[:digit:]]+)\\.([[:digit:]]+)",
+    remove = FALSE
+  ) %>%
+  arrange(Package, desc(Major), desc(Minor), desc(Detail))
+```
+
+## Latest version of available packages
+
+```{r latest}
+dataset %>%
+  select(Package, Version, OS) %>%
+  group_by(Package, OS) %>%
+  slice(1) %>%
+  spread(OS, Version) %>%
+  kable()
+```
+
+## All available versions
+
+### Source packages
+
+```{r source}
+dataset %>%
+  filter(OS == "Source") %>%
+  select(Package, Version) %>%
+  kable()
+```
+
+### Windows binaries
+
+```{r windows}
+dataset %>%
+  filter(OS == "Windows") %>%
+  select(Package, Version) %>%
+  kable()
+```
+
+### Mac OS X binaries
+
+```{r macosx}
+dataset %>%
+  filter(OS == "OS X") %>%
+  select(Package, Version) %>%
+  kable()
+```
