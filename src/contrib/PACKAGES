@@ -14,7 +14,7 @@ Imports: assertable, assertthat, dplyr, leaflet, sp, rgbif, httr,
         iterators, lubridate, readr, lazyeval, rlang, rgdal
 Suggests: knitr, rmarkdown, testthat, ggplot2, drat
 License: MIT + file LICENSE
-MD5sum: 20e233078650f28b69f841fba614feed
+MD5sum: 5968ef873ab44ed474789971853e9b0a
 NeedsCompilation: no
 
 Package: INBOtheme
