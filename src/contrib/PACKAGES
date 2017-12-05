@@ -1,9 +1,20 @@
 Package: INBOmd
 Version: 0.4.0
 Imports: assertthat, utils, rmarkdown
-Suggests: knitr, pander, ggplot2, bookdown, webshot, INBOtheme (>= 0.5.4)
+Suggests: knitr, pander, ggplot2, bookdown, webshot, INBOtheme (>=
+        0.5.4)
 License: GPL-3
 MD5sum: 40908cbbbd9e8c7df97d42f2d586aeee
+NeedsCompilation: no
+
+Package: inborutils
+Version: 0.0.0.9000
+Depends: R (>= 3.4.2)
+Imports: assertable, assertthat, dplyr, leaflet, sp, rgbif, httr,
+        iterators, lubridate, readr, lazyeval, rlang, rgdal
+Suggests: knitr, rmarkdown, testthat, ggplot2, drat
+License: MIT + file LICENSE
+MD5sum: 20e233078650f28b69f841fba614feed
 NeedsCompilation: no
 
 Package: INBOtheme
@@ -18,8 +29,10 @@ NeedsCompilation: no
 Package: multimput
 Version: 0.2.7
 Depends: R (>= 3.0.0)
-Imports: dplyr, methods, tibble, tidyr, assertthat, lme4, mvtnorm, digest
-Suggests: testthat, INLA, snowfall, ggplot2, mgcv, knitr, MASS, rmarkdown
+Imports: dplyr, methods, tibble, tidyr, assertthat, lme4, mvtnorm,
+        digest
+Suggests: testthat, INLA, snowfall, ggplot2, mgcv, knitr, MASS,
+        rmarkdown
 License: GPL-3 | file LICENSE
 MD5sum: 1b7c1bbcfe914a1bf2be84e7a11eba7b
 NeedsCompilation: no
