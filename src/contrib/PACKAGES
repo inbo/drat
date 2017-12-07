@@ -4,7 +4,7 @@ Imports: assertthat, utils, rmarkdown
 Suggests: knitr, pander, ggplot2, bookdown, webshot, INBOtheme (>=
         0.5.4)
 License: GPL-3 | file LICENSE
-MD5sum: 6b177e3f1761069d8222b51a42bb927a
+MD5sum: 983294dcc343999715da06531bec4919
 NeedsCompilation: no
 
 Package: inborutils
