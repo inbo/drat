@@ -61,26 +61,55 @@ dataset %>%
 ### Source packages
 
 ```{r source}
-dataset %>%
-  filter(OS == "Source") %>%
-  select(Package, Version) %>%
+list.files("src/contrib", pattern = "tar.gz$") %>%
+  data_frame() %>%
+  select(file = 1) %>%
+  mutate(
+    version = gsub(".tar.gz", "", file),
+    url = paste0("src/contrib/", file)
+  ) %>%
+  extract(version, c("Package", "version"), regex = "(.*)_(.*)") %>%
+  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  group_by(Package) %>%
+  summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
 ```
 
 ### Windows binaries
 
 ```{r windows}
-dataset %>%
-  filter(OS == "Windows") %>%
-  select(Package, Version) %>%
+list.files("bin/windows/contrib", pattern = "zip$", recursive = TRUE) %>%
+  data_frame() %>%
+  select(file = 1) %>%
+  mutate(
+    version = gsub(".zip", "", file),
+    url = paste0("bin/windows/contrib/", file)
+  ) %>%
+  extract(version, c("R", "Package", "version"), regex = "(.*)/(.*)_(.*)") %>%
+  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  group_by(R, Package) %>%
+  summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
 ```
 
 ### Mac OS X binaries
 
 ```{r macosx}
-dataset %>%
-  filter(OS == "OS X") %>%
-  select(Package, Version) %>%
+list.files("bin/macosx", pattern = "tgz$", recursive = TRUE) %>%
+  data_frame() %>%
+  select(file = 1) %>%
+  mutate(
+    version = gsub(".tgz", "", file) %>%
+      gsub(pattern = "contrib/", replacement = ""),
+    url = paste0("bin/macosx/", file)
+  ) %>%
+  extract(
+    version, 
+    c("OS", "R", "Package", "version"), 
+    regex = "(.*)/(.*)/(.*)_(.*)"
+  ) %>%
+  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  group_by(OS, R, Package) %>%
+  summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
 ```
