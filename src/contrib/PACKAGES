@@ -11,10 +11,10 @@ Package: inborutils
 Version: 0.0.0.9000
 Depends: R (>= 3.4.2)
 Imports: assertable, assertthat, dplyr, leaflet, sp, rgbif, httr,
-        iterators, lubridate, readr, lazyeval, rlang, rgdal
+        iterators, lubridate, readr, lazyeval, rlang, rgdal, stats
 Suggests: knitr, rmarkdown, testthat, ggplot2, drat
 License: MIT + file LICENSE
-MD5sum: e33227a8dc5579026d115c13dd83da6d
+MD5sum: 9c25c000639ef6a94edc8b6a3f0ebcad
 NeedsCompilation: no
 
 Package: INBOtheme
