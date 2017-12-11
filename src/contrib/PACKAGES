@@ -34,5 +34,5 @@ Imports: dplyr, methods, tibble, tidyr, assertthat, lme4, mvtnorm,
 Suggests: testthat, INLA, snowfall, ggplot2, mgcv, knitr, MASS,
         rmarkdown
 License: GPL-3 | file LICENSE
-MD5sum: 19817d4ca465d4f40e300b96ea680332
+MD5sum: 7b13b6b73608960894b1383b1f3ca6eb
 NeedsCompilation: no
