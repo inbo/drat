@@ -1,14 +1,8 @@
 box: rocker/tidyverse
 build_gh:
   steps:
+    - install-packages:
+        packages: libgeos-dev libgdal-dev
     - script:
         name: render Rmd files
-        code: |
-          git config --global user.email "bmk@inbo.be"
-          git config --global user.name "INBO CI"
-          git clone --depth 1 git@github.com:inbo/drat.git drat --branch=gh-pages
-          cd drat
-          Rscript "render.R"
-          git add --all
-          git commit -m "Render markdown"
-          git push origin
+        code: ./render.sh
