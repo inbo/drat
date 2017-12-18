@@ -6,6 +6,7 @@ cd drat
 if [[ $(git log -1 | grep "Render markdown") ]]; then
   echo "Done"
 else
+  git checkout gh-pages
   Rscript "render.R"
   git add --all
   git commit -m "Render markdown"
