@@ -1,6 +1,8 @@
 box: rocker/tidyverse
 build_gh:
   steps:
+    - add-ssh-key:
+        keyname: drat
     - install-packages:
         packages: libgeos-dev libgdal-dev
     - script:
