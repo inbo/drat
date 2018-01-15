@@ -71,7 +71,7 @@
       <h1>(Down)load data from external partners</h1>
                         <h4 class="author">S. Van Hoey</h4>
             
-            <h4 class="date">2017-12-19</h4>
+            <h4 class="date">2018-01-15</h4>
           </div>
 
     
@@ -199,16 +199,16 @@ Date    Time    Cond [µS/cm]    Quality flag    Comments
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">conductivity_mow &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read_mow_data.html">read_mow_data</a></span>(fpath)
 <span class="kw">head</span>(conductivity_mow)</code></pre></div>
 <pre><code>## # A tibble: 6 x 10
-##              datetime   value quality_code quality_comments
-##                &lt;dttm&gt;   &lt;dbl&gt;        &lt;chr&gt;            &lt;chr&gt;
-## 1 2015-04-01 00:00:00 631.996            G             &lt;NA&gt;
-## 2 2015-04-01 00:05:00 631.007            G             &lt;NA&gt;
-## 3 2015-04-01 00:10:00 632.993            G             &lt;NA&gt;
-## 4 2015-04-01 00:15:00 631.004            G             &lt;NA&gt;
-## 5 2015-04-01 00:20:00 631.996            G             &lt;NA&gt;
-## 6 2015-04-01 00:25:00 631.004            G             &lt;NA&gt;
-## # ... with 6 more variables: location_name &lt;chr&gt;, variable_name &lt;chr&gt;,
-## #   unit &lt;chr&gt;, longitude &lt;dbl&gt;, latitude &lt;dbl&gt;, source_filename &lt;chr&gt;</code></pre>
+##   datetime            value quality_code quality_comments location_name   
+##   &lt;dttm&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;           
+## 1 2015-04-01 00:00:00   632 " G"         &lt;NA&gt;             Destelbergen SF…
+## 2 2015-04-01 00:05:00   631 " G"         &lt;NA&gt;             Destelbergen SF…
+## 3 2015-04-01 00:10:00   633 " G"         &lt;NA&gt;             Destelbergen SF…
+## 4 2015-04-01 00:15:00   631 " G"         &lt;NA&gt;             Destelbergen SF…
+## 5 2015-04-01 00:20:00   632 " G"         &lt;NA&gt;             Destelbergen SF…
+## 6 2015-04-01 00:25:00   631 " G"         &lt;NA&gt;             Destelbergen SF…
+## # ... with 5 more variables: variable_name &lt;chr&gt;, unit &lt;chr&gt;,
+## #   longitude &lt;dbl&gt;, latitude &lt;dbl&gt;, source_filename &lt;chr&gt;</code></pre>
 <p>(<em>Remark</em>: this example file is provided by the package itself, see also on <a href="https://github.com/inbo/inborutils/tree/master/inst/extdata">github</a>)</p>
 <p>A time series plot can be made for these data as well:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
@@ -240,14 +240,14 @@ Date    Time    Cond [µS/cm]    Quality flag    Comments
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rainfall_kmi &lt;-<span class="st"> </span><span class="kw"><a href="../reference/read_kmi_data.html">read_kmi_data</a></span>(rpath)
 <span class="kw">head</span>(rainfall_kmi)</code></pre></div>
 <pre><code>## # A tibble: 6 x 7
-##              datetime        location_name value  unit variable_name
-##                &lt;dttm&gt;                &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;
-## 1 2012-01-01 01:00:00 SINT_KATELIJNE_WAVER   0.0    mm precipitation
-## 2 2012-01-01 02:00:00 SINT_KATELIJNE_WAVER   0.0    mm precipitation
-## 3 2012-01-01 03:00:00 SINT_KATELIJNE_WAVER   0.0    mm precipitation
-## 4 2012-01-01 04:00:00 SINT_KATELIJNE_WAVER   0.0    mm precipitation
-## 5 2012-01-01 05:00:00 SINT_KATELIJNE_WAVER   1.1    mm precipitation
-## 6 2012-01-01 06:00:00 SINT_KATELIJNE_WAVER   0.2    mm precipitation
+##   datetime            location_name        value unit  variable_name
+##   &lt;dttm&gt;              &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;        
+## 1 2012-01-01 01:00:00 SINT_KATELIJNE_WAVER 0     mm    precipitation
+## 2 2012-01-01 02:00:00 SINT_KATELIJNE_WAVER 0     mm    precipitation
+## 3 2012-01-01 03:00:00 SINT_KATELIJNE_WAVER 0     mm    precipitation
+## 4 2012-01-01 04:00:00 SINT_KATELIJNE_WAVER 0     mm    precipitation
+## 5 2012-01-01 05:00:00 SINT_KATELIJNE_WAVER 1.10  mm    precipitation
+## 6 2012-01-01 06:00:00 SINT_KATELIJNE_WAVER 0.200 mm    precipitation
 ## # ... with 2 more variables: source_filename &lt;chr&gt;, quality_code &lt;chr&gt;</code></pre>
 <p>(<em>Remark</em>: this example file is provided by the package itself, see also on <a href="https://github.com/inbo/inborutils/tree/master/inst/extdata">github</a>)</p>
 </div>
@@ -281,7 +281,7 @@ Date    Time    Cond [µS/cm]    Quality flag    Comments
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
