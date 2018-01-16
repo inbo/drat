@@ -7,7 +7,7 @@ cd drat
 if [[ $(git log -1 | grep "Render markdown") ]]; then
   echo "Done"
 else
-  Rscript "render.R"
+  r render.R
   git add --all
   git commit -m "Render markdown"
   git push origin

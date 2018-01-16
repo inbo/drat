@@ -4,7 +4,7 @@ build_gh:
     - add-ssh-key:
         keyname: drat
     - install-packages:
-        packages: libgeos-dev libgdal-dev ssh
+        packages: libgeos-dev libgdal-dev ssh r-cran-littler
     - script:
         name: render Rmd files
         code: ./render.sh
