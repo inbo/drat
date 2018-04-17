@@ -18,12 +18,12 @@ MD5sum: 4d94b75102bd21d627fb1febf4ee2663
 NeedsCompilation: no
 
 Package: INBOtheme
-Version: 0.5.5
+Version: 0.5.5.1
 Depends: R (>= 3.2.0)
 Imports: colorspace, grid, ggplot2 (>= 2.2.1), scales
 Suggests: testthat, lintr, knitr
 License: GPL-3
-MD5sum: 32a246938ce0c02fa302051a9eae0488
+MD5sum: a49be5543e0d86cf266b9678a1b3494b
 NeedsCompilation: no
 
 Package: multimput
