@@ -73,8 +73,12 @@ list.files("src/contrib", pattern = "tar.gz$") %>%
     url = paste0("src/contrib/", file)
   ) %>%
   extract(version, c("Package", "version"), regex = "(.*)_(.*)") %>%
-  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  mutate(
+    markdown = sprintf("[%s](%s)", version, url),
+    order = order(numeric_version(version))
+  ) %>%
   group_by(Package) %>%
+  arrange(desc(order)) %>%
   summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
 ```
@@ -90,7 +94,11 @@ list.files("bin/windows/contrib", pattern = "zip$", recursive = TRUE) %>%
     url = paste0("bin/windows/contrib/", file)
   ) %>%
   extract(version, c("R", "Package", "version"), regex = "(.*)/(.*)_(.*)") %>%
-  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  mutate(
+    markdown = sprintf("[%s](%s)", version, url),
+    order = order(numeric_version(version))
+  ) %>%
+  arrange(desc(order)) %>%
   group_by(R, Package) %>%
   summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
@@ -112,7 +120,11 @@ list.files("bin/macosx", pattern = "tgz$", recursive = TRUE) %>%
     c("OS", "R", "Package", "version"), 
     regex = "(.*)/(.*)/(.*)_(.*)"
   ) %>%
-  mutate(markdown = sprintf("[%s](%s)", version, url)) %>%
+  mutate(
+    markdown = sprintf("[%s](%s)", version, url),
+    order = order(numeric_version(version))
+  ) %>%
+  arrange(desc(order)) %>%
   group_by(OS, R, Package) %>%
   summarise(Versions = paste(markdown, collapse = ", ")) %>%
   kable()
