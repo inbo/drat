@@ -18,6 +18,7 @@ opts_chunk$set(echo = FALSE)
 library(dplyr)
 library(purrr)
 library(tidyr)
+library(tibble)
 ```
 
 ```{r read-data}
@@ -45,6 +46,9 @@ Links on package names refer to documentation websites.
 
 ```{r latest}
 dataset %>%
+  group_by(Package, OS) %>%
+  filter(numeric_version(Version) == max(numeric_version(Version))) %>%
+  ungroup() %>%
   spread(OS, Version) %>%
   mutate(
     Package = ifelse(
