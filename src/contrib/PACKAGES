@@ -23,7 +23,7 @@ Depends: R (>= 3.2.0)
 Imports: colorspace, grid, ggplot2 (>= 2.2.1), scales
 Suggests: testthat, lintr, knitr
 License: GPL-3
-MD5sum: a49be5543e0d86cf266b9678a1b3494b
+MD5sum: 204b8e19242789683204916432e39d61
 NeedsCompilation: no
 
 Package: multimput
