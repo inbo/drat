@@ -18,13 +18,16 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+<meta property="og:title" content="Function reference" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -32,6 +35,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -47,8 +52,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">multimput</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">multimput</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.8.1</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -65,6 +74,7 @@
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -72,108 +82,103 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.2.8.1</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="aggregate_impute.html">aggregate_impute</a></code> </p>
-          </td>
-          <td><p>Aggregate an imputed dataset</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="aggregatedImputed-class.html">aggregatedImputed-class</a></code> </p>
-          </td>
-          <td><p>The aggregatedimputed class
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        <!--  -->
+        <td>
+          <p><code><a href="aggregate_impute.html">aggregate_impute()</a></code> </p>
+        </td>
+        <td><p>Aggregate an imputed dataset</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="aggregatedImputed-class.html">aggregatedImputed-class</a></code> </p>
+        </td>
+        <td><p>The aggregatedimputed class
 Holds an aggregated imputation data set</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="generateData.html">generateData</a></code> </p>
-          </td>
-          <td><p>Generate simulated data</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="impute.html">impute</a></code> </p>
-          </td>
-          <td><p>Impute a dataset</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="inla-class.html">inla-class</a></code> </p>
-          </td>
-          <td><p>inla</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="missingAtRandom.html">missingAtRandom</a></code> </p>
-          </td>
-          <td><p>Generate missing data at random</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="missingCurrentCount.html">missingCurrentCount</a></code> </p>
-          </td>
-          <td><p>Generate missing data depending on the counts</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="missingObserved.html">missingObserved</a></code> </p>
-          </td>
-          <td><p>Generate missing data based on the observed patterns in the real dataset.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="missingVolunteer.html">missingVolunteer</a></code> </p>
-          </td>
-          <td><p>Generate missing data mimicschoices made by volunteers.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="model_impute.html">model_impute</a></code> </p>
-          </td>
-          <td><p>Model an imputed dataset</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="rawImputed-class.html">rawImputed-class</a></code> </p>
-          </td>
-          <td><p>The rawimputed class
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="generateData.html">generateData()</a></code> </p>
+        </td>
+        <td><p>Generate simulated data</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="impute.html">impute()</a></code> </p>
+        </td>
+        <td><p>Impute a dataset</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="inla-class.html">inla-class</a></code> </p>
+        </td>
+        <td><p>inla</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="missingAtRandom.html">missingAtRandom()</a></code> </p>
+        </td>
+        <td><p>Generate missing data at random</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="missingCurrentCount.html">missingCurrentCount()</a></code> </p>
+        </td>
+        <td><p>Generate missing data depending on the counts</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="missingObserved.html">missingObserved()</a></code> </p>
+        </td>
+        <td><p>Generate missing data based on the observed patterns in the real dataset.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="missingVolunteer.html">missingVolunteer()</a></code> </p>
+        </td>
+        <td><p>Generate missing data mimicschoices made by volunteers.</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="model_impute.html">model_impute()</a></code> </p>
+        </td>
+        <td><p>Model an imputed dataset</p></td>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="rawImputed-class.html">rawImputed-class</a></code> </p>
+        </td>
+        <td><p>The rawimputed class
 Holds a dataset and imputed values</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="waterfowl.html">data</a></code> </p>
-          </td>
-          <td><p>The observation pattern in the Flemish waterfowl dataset</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+      </tr><tr>
+        <!--  -->
+        <td>
+          <p><code><a href="waterfowl.html">waterfowl</a></code> </p>
+        </td>
+        <td><p>The observation pattern in the Flemish waterfowl dataset</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -196,5 +201,8 @@ Holds a dataset and imputed values</p></td>
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
