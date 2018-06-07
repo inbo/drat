@@ -50,13 +50,6 @@ dataset %>%
   filter(numeric_version(Version) == max(numeric_version(Version))) %>%
   ungroup() %>%
   spread(OS, Version) %>%
-  mutate(
-    Package = ifelse(
-      Package %in% list.files("docs"),
-      sprintf("[%1$s](docs/%1$s/index.html)", Package),
-      Package
-    )
-  ) %>%
   kable()
 ```
 
