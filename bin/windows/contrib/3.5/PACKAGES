@@ -1,12 +1,11 @@
 Package: INBOmd
 Version: 0.4.2
 Imports: assertthat, utils, rmarkdown
-Suggests: knitr, pander, ggplot2, bookdown (>= 0.7.7), webshot,
-        INBOtheme (>= 0.5.4)
+Suggests: knitr, pander, ggplot2, bookdown (>= 0.7.7), webshot, INBOtheme (>= 0.5.4)
 License: GPL-3 | file LICENSE
 
 Package: INBOtheme
-Version: 0.5.5.1
+Version: 0.5.5.2
 Depends: R (>= 3.2.0)
 Imports: colorspace, grid, ggplot2 (>= 2.2.1), scales
 Suggests: testthat, lintr, knitr
